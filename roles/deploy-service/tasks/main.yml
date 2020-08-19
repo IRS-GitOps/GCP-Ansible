@@ -1,0 +1,46 @@
+---
+- name: Install java
+  apt:
+    name: openjdk-8-jdk
+    state: latest
+    update_cache: true
+
+- name: Install maven
+  apt:
+    name: maven
+    state: latest
+
+- name: Install pip
+  apt:
+    name: python3-pip
+    state: latest
+
+- name: Install dependencies
+  pip:
+    name: lxml
+    state: present
+
+- name: Deploy artifact
+  maven_artifact:
+    group_id: org.springframework.boot
+    artifact_id: spring-boot-starter-parent
+    version: 0.0.1
+    repository_url: https://nexus.cb-demos.io/repository/maven-releases/
+    extension: jar
+    owner: root
+    username: admin
+    password: password
+    dest: /tmp/spring-boot-starter-parent-0.0.1.jar
+
+- name: Copy systemd service
+  copy:
+    src: webapp.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+
+- name: Start service
+  systemd:
+    name: webapp
+    state: started
+    enabled: yes

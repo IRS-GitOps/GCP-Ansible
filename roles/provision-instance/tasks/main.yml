@@ -1,0 +1,8 @@
+---
+- import_tasks: deploy.yml
+  tags:
+    - deploy
+
+- import_tasks: destroy.yml
+  tags:
+    - destroy

@@ -1,0 +1,10 @@
+[Unit]
+Description=Demo web app
+
+[Service]
+User=root
+Group=root
+ExecStart=java -jar /tmp/webapp.jar
+
+[Install]
+WantedBy=multi-user.target

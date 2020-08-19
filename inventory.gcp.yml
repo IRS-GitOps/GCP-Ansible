@@ -1,0 +1,5 @@
+plugin: gcp_compute
+projects:
+  - root
+auth_kind: serviceaccount
+service_account_file: /Users/root/.gcloud/localhost.json
