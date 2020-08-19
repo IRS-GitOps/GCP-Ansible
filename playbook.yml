@@ -1,15 +1,10 @@
 - hosts: localhost
-  vars:
-    gcp_project: root
-    gcp_cred_kind: serviceaccount
-    gcp_cred_file: /Users/root/.gcloud/localhost.json
-
   roles:
     - provision-instance
 
 - hosts: new_instances
   connection: ssh
-  remote_user: root
+  remote_user: "{{ target_user }}"
   become: true
   tags:
     - deploy

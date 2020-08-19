@@ -27,7 +27,7 @@
     version: 0.0.1
     repository_url: https://nexus.cb-demos.io/repository/maven-releases/
     extension: jar
-    owner: root
+    owner: "{{ target_user }}"
     username: admin
     password: password
     dest: /tmp/spring-boot-starter-parent-0.0.1.jar
