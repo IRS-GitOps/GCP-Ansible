@@ -1,4 +1,5 @@
 plugin: gcp_compute
 projects:
-  - root
+  - tjohnson
 auth_kind: serviceaccount
+service_account_file: ~/.gcloud/localhost.json

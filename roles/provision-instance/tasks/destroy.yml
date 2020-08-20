@@ -1,7 +1,7 @@
 ---
 - name: Destroy an instance
   gcp_compute_instance:
-    name: test
+    name: "{{ instance_name }}"
     machine_type: n1-standard-1
     zone: us-central1-a
     project: "{{ gcp_project }}"
@@ -12,7 +12,7 @@
 
 - name: Destroy firewall
   gcp_compute_firewall:
-    name: my-firewall
+    name: "{{ instance_name }}-firewall"
     allowed:
       - ip_protocol: tcp
         ports: ['80', '22', '443', '8080']
@@ -26,7 +26,7 @@
 
 - name: delete a network
   gcp_compute_network:
-    name: my-network
+    name: "{{ instance_name }}-network"
     project: "{{ gcp_project }}"
     auth_kind: "{{ gcp_cred_kind }}"
     service_account_file: "{{ gcp_cred_file }}"
@@ -35,7 +35,7 @@
 
 - name: delete a address
   gcp_compute_address:
-    name: my-address
+    name: "{{ instance_name }}-address"
     region: us-central1
     project: "{{ gcp_project }}"
     auth_kind: "{{ gcp_cred_kind }}"

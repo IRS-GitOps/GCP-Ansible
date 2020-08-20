@@ -24,13 +24,13 @@
   maven_artifact:
     group_id: org.springframework.boot
     artifact_id: spring-boot-starter-parent
-    version: 0.0.1
+    version: "{{ release_version }}"
     repository_url: https://nexus.cb-demos.io/repository/maven-releases/
     extension: jar
     owner: "{{ target_user }}"
-    username: admin
-    password: password
-    dest: /tmp/spring-boot-starter-parent-0.0.1.jar
+    username: "{{ nexus_user }}"
+    password: "{{ nexus_password }}"
+    dest: /tmp/webapp.jar
 
 - name: Copy systemd service
   copy:

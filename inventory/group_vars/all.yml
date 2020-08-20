@@ -1,5 +1,9 @@
 ---
-gcp_project: root
+gcp_project: empty
 gcp_cred_kind: serviceaccount
-gcp_cred_file: /Users/root/.gcloud/localhost.json
-target_user: root
+gcp_cred_file: ~/.gcloud/localhost.json
+target_user: empty
+nexus_user: empty
+nexus_password: empty
+release_version: 0.0.1
+instance_name: empty
