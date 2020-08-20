@@ -12,7 +12,13 @@ spec:
     - name: gcloud
       mountPath: "/root/.gcloud/"
       readOnly: true
+    - name: ssh
+      mountPath: "/root/.ssh/"
+      readOnly: true
   volumes:
   - name: gcloud
     secret:
       secretName: tjohnson
+  - name: ssh
+    secret:
+      secretName: secret-ssh
