@@ -20,11 +20,6 @@ spec:
     secret:
       secretName: tjohnson
   - name: ssh
-    projected:
-      sources:
-      - secret:
-          secretName: secret-ssh
-          items:
-            - key: id_rsa
-              path: id_rsa
-              mode: '0600'
+    secret:
+      secretName: secret-ssh
+      defaultMode: 0600
