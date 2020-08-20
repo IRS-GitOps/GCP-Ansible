@@ -4,7 +4,7 @@ metadata:
 spec:
   containers:
   - name: ansible
-    image: johns2te/ansible:Ubuntu1804
+    image: johns2te/ansible:ubuntu1804
     command:
     - cat
     tty: true
