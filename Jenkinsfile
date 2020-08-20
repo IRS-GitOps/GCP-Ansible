@@ -18,8 +18,8 @@ pipeline {
       steps {
               container('ansible') {
                 checkout scm
-                withCredentials([usernamePassword(credentialsId: 'AWX', passwordVariable: 'nexpass', usernameVariable: 'nexuser'), string(credentialsId: 'GCP-user-proj', variable: 'gcp-user-proj')]) {
-                sh 'ansible-playbook -i inventory playbook.yml --tags "deploy" --extra-vars "instance_name=pre-prod nexus_user=${nexuser} nexus_password=${nexpass} target_user=${gcp-user-proj} gcp_project=${gcp-user-proj}"'
+                withCredentials([usernamePassword(credentialsId: 'AWX', passwordVariable: 'nexpass', usernameVariable: 'nexuser'), string(credentialsId: 'gcpuserproj', variable: 'gcpuserproj')]) {
+                sh 'ansible-playbook -i inventory playbook.yml --tags "deploy" --extra-vars "instance_name=pre-prod nexus_user=${nexuser} nexus_password=${nexpass} target_user=${gcpuserproj} gcp_project=${gcpuserproj}"'
                 }
               }
       }
@@ -31,8 +31,8 @@ pipeline {
       steps {
               container('ansible') {
                 checkout scm
-                withCredentials([usernamePassword(credentialsId: 'AWX', passwordVariable: 'nexpass', usernameVariable: 'nexuser'), string(credentialsId: 'GCP-user-proj', variable: 'gcp-user-proj')]) {
-                sh 'ansible-playbook -i inventory playbook.yml --tags "deploy" --extra-vars "instance_name=prod nexus_user=${nexuser} nexus_password=${nexpass} target_user=${gcp-user-proj} gcp_project=${gcp-user-proj}"'
+                withCredentials([usernamePassword(credentialsId: 'AWX', passwordVariable: 'nexpass', usernameVariable: 'nexuser'), string(credentialsId: 'gcpuserproj', variable: 'gcpuserproj')]) {
+                sh 'ansible-playbook -i inventory playbook.yml --tags "deploy" --extra-vars "instance_name=prod nexus_user=${nexuser} nexus_password=${nexpass} target_user=${gcpuserproj} gcp_project=${gcpuserproj}"'
                 }
               }
       }
