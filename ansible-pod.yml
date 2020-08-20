@@ -27,4 +27,4 @@ spec:
           items:
             - key: id_rsa
               path: id_rsa
-              mode: 600
+              mode: '0600'
