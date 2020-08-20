@@ -1,0 +1,10 @@
+kind: Pod
+metadata:
+  name: ansible
+spec:
+  containers:
+  - name: ansible
+    image: johns2te/ansible:Ubuntu1804
+    command:
+    - cat
+    tty: true
