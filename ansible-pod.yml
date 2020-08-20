@@ -9,7 +9,7 @@ spec:
     - cat
     tty: true
     volumeMounts:
-    - name: foo
+    - name: gcloud
       mountPath: "/.gcloud/localhost.json"
       readOnly: true
   volumes:
