@@ -22,4 +22,4 @@ spec:
   - name: ssh
     secret:
       secretName: secret-ssh
-      defaultMode: 0600
+      defaultMode: 384
