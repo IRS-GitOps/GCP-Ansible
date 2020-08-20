@@ -21,7 +21,8 @@ spec:
       secretName: tjohnson
   - name: ssh
     secret:
-      name: secret-ssh
+      secretName: secret-ssh
       items:
         - key: id_rsa
+          path: /root/.ssh/id_rsa
           mode: 0600
