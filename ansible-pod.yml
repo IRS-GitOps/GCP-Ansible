@@ -10,7 +10,7 @@ spec:
     tty: true
     volumeMounts:
     - name: gcloud
-      mountPath: "/.gcloud/localhost.json"
+      mountPath: "/root/.gcloud/localhost.json"
       readOnly: true
   volumes:
   - name: gcloud
