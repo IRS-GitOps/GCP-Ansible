@@ -4,7 +4,7 @@
 
 - hosts: new_instances
   connection: ssh
-  remote_user: "{{ target_user }}"
+  remote_user: tjohnson
   become: true
   tags:
     - deploy
