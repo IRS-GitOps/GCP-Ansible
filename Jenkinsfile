@@ -11,9 +11,9 @@ pipeline {
   stages('VM Creation GCE/Java App Deployment')
   {
     stage('GCE Provisioning/App Deploy PreProd') {
-      //when {
-       // branch 'preprod'
-      //}
+      when {
+        branch 'preprod'
+      }
       steps {
               container('ansible') {
                 checkout scm
