@@ -6,7 +6,6 @@ pipeline {
   }  
   options { 
     buildDiscarder(logRotator(numToKeepStr: '2'))
-    skipDefaultCheckout true
     preserveStashes(buildCount: 2)
   }
   stages('VM Creation GCE/Java App Deployment')
@@ -25,9 +24,9 @@ pipeline {
       }
     }  
     stage('GCE Provisioning/App Deploy PROD') {
-      //when {
-       // branch 'master'
-      //}
+      when {
+        branch 'master'
+      }
       steps {
               container('ansible') {
                 checkout scm
