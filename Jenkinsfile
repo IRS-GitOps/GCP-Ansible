@@ -25,9 +25,9 @@ pipeline {
       }
     }  
     stage('GCE Provisioning/App Deploy PROD') {
-      //when {
-       // branch 'master'
-      //}
+      when {
+        branch 'master'
+      }
       steps {
               container('ansible') {
                 checkout scm
