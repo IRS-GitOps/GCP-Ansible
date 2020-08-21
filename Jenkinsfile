@@ -6,7 +6,6 @@ pipeline {
   }  
   options { 
     buildDiscarder(logRotator(numToKeepStr: '2'))
-    skipDefaultCheckout true
     preserveStashes(buildCount: 2)
   }
   stages('VM Creation GCE/Java App Deployment')
