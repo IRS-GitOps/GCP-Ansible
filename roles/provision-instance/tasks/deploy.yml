@@ -2,7 +2,7 @@
 - name: create a disk
   gcp_compute_disk:
     name: "{{ instance_name }}-disk"
-    size_gb: 20
+    size_gb: 30
     source_image: projects/ubuntu-os-cloud/global/images/family/ubuntu-1804-lts
     zone: us-central1-a
     project: "{{ gcp_project }}"
@@ -70,7 +70,7 @@
   register: instance
 
 - name: Wait for SSH to come up
-  wait_for: host={{ address.address }} port=22 delay=10 timeout=60
+  wait_for: host={{ address.address }} port=22 delay=10 timeout=180
 
 - name: Add host to groupname
   add_host:
