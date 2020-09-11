@@ -70,7 +70,7 @@
   register: instance
 
 - name: Wait for SSH to come up
-  wait_for: host={{ address.address }} port=22 delay=10 timeout=180
+  wait_for: host={{ address.address }} port=22 delay=10 timeout=240
 
 - name: Add host to groupname
   add_host:
