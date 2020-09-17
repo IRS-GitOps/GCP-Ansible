@@ -5,6 +5,7 @@
 - hosts: new_instances
   connection: ssh
   remote_user: tjohnson
+  gather_facts: no
   become: true
   tags:
     - deploy
