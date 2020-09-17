@@ -1,4 +1,10 @@
 ---
+- name: Wait for system to become reachable
+  wait_for_connection:
+
+- name: Gather facts for first time
+  setup:
+
 - name: Install java
   apt:
     name: openjdk-8-jdk
