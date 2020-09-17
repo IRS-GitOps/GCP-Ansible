@@ -4,7 +4,9 @@
 
 - name: Gather facts for first time
   setup:
-
+- pause:
+    minutes: 2
+    
 - name: Install java
   apt:
     name: openjdk-8-jdk
